@@ -13,7 +13,7 @@ do
             notify-send -i "$PWD/batteryfull.png" "Battery full." "Level: ${battery_percent}% "
         fi
     fi
-    if [ "$battery_percent" -lt 20 ]; then
+    if ! on_ac_power && [ "$battery_percent" -lt 20 ]; then
             notify-send -i "$PWD/batteryfull.png" "Battery low." "Level: ${battery_percent}% "
     fi
 
